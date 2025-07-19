@@ -1,0 +1,172 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{setspace}
+
+\geometry{left=2cm,right=1.5cm,top=2cm,bottom=2cm}
+\setlength{\parindent}{0pt}
+
+\renewcommand{\arraystretch}{1.2}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+
+% Титульная страница
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \textbf{\large ГУАП} \\
+    \textbf{\large КАФЕДРА № 43} \\
+    \vspace{2cm}
+    
+    \textbf{\Large ОТЧЕТ} \\
+    \textbf{\Large ЗАЩИЩЕН С ОЦЕНКОЙ} \\
+    \vspace{2cm}
+    
+    \begin{tabular}{|C{5cm}|C{2cm}|C{5cm}|}
+        \hline
+        \multirow{2}{5cm}{\centering канд. техн. наук., доцент} & \multirow{2}{2cm}{} & \multirow{2}{5cm}{} \\
+        & & \\ \hline
+        должность, уч. степень, звание & подпись, дата & инициалы, фамилия \\
+        & & Д. В. Богданов \\
+        \hline
+    \end{tabular}
+    \vspace{2cm}
+    
+    \begin{tabular}{|c|}
+        \hline
+        \textbf{ОТЧЕТ О ЛАБОРАТОРНОЙ РАБОТЕ №3} \\
+        \hline
+        \textbf{Расчет параметров сетевого графика матричным методом} \\
+        \hline
+        \textbf{по курсу: УПРАВЛЕНИЕ ПРОГРАММНЫМИ ПРОЕКТАМИ} \\
+        \hline
+        \\
+        \hline
+    \end{tabular}
+    \vspace{2cm}
+    
+    \begin{tabular}{|C{3cm}|C{3cm}|C{2cm}|C{5cm}|}
+        \hline
+        \textbf{СТУДЕНТ гр. №} & \textbf{4233K} & \textbf{07.05.2025} & \textbf{} \\
+        \hline
+        & & подпись, дата & инициалы, фамилия \\
+        & & & Е.А. Осинкин \\
+        \hline
+    \end{tabular}
+    \vfill
+    
+    \textbf{\large Санкт-Петербург 2025}
+\end{titlepage}
+
+\section*{1. Цель работы}
+Получение навыков по расчету временных параметров сетевых моделей, представленных в виде матрицы.
+
+\section*{2. Вариант задания}
+Произвести расчет временных параметров сетевой модели матричным методом в соответствии с вариантом, представленным в приложении.
+
+\begin{enumerate}
+    \item Проанализировать вариант задания.
+    \item Построить сетевой график.
+    \item Произвести нумерацию вершин сетевого графика.
+    \item Сформировать матричное представление сетевого графика.
+    \item Произвести расчет временных параметров матричным методом.
+    \item Оформить отчет.
+    \item Защитить отчет.
+\end{enumerate}
+
+\textbf{Вариант 1.}
+
+\section*{3. Сетевой график}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{aoa_graph.png}
+    \caption{Сетевой график AoA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{aon_graph.png}
+    \caption{Сетевой график AoN}
+\end{figure}
+
+\section*{4. Матричное представление сетевого графика}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        & A & B & C & \ldots \\
+        \hline
+        A & 0 & 3 & 0 & \ldots \\
+        \hline
+        B & 0 & 0 & 5 & \ldots \\
+        \hline
+        \ldots & \ldots & \ldots & \ldots & \ldots \\
+        \hline
+    \end{tabular}
+    \caption{Матричное представление сетевого графа}
+\end{table}
+
+\section*{5. Расчет временных параметров матричным методом}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Работа & t & ES & EF & LS & LF \\
+        \hline
+        I-A & 2 & 0 & 2 & 0 & 2 \\
+        \hline
+        A-E & 3 & 2 & 5 & 2 & 5 \\
+        \hline
+        \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+        \hline
+    \end{tabular}
+    \caption{Расчет временных параметров матричным методом}
+\end{table}
+
+\section*{6. Результаты расчетов}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Событие & T\_ран & T\_поз & R & Крит. путь \\
+        \hline
+        1 & 0 & 0 & 0 & Да \\
+        \hline
+        2 & 2 & 2 & 0 & Да \\
+        \hline
+        \ldots & \ldots & \ldots & \ldots & \ldots \\
+        \hline
+    \end{tabular}
+    \caption{Расчет временных параметров событий}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Работа & R\_полн & R\_своб \\
+        \hline
+        I-A & 0 & 0 \\
+        \hline
+        A-E & 0 & 0 \\
+        \hline
+        \ldots & \ldots & \ldots \\
+        \hline
+    \end{tabular}
+    \caption{Расчет резервов времени работ}
+\end{table}
+
+\textbf{Критический путь: (I,A)(A,E)(E,M)(M,K)(K,C)} \\
+\textbf{Продолжительность критического пути: 14}
+
+\section*{7. Выводы}
+В результате работы были получены навыки по расчету временных параметров сетевых моделей, представленных в виде матрицы. Были найдены временные параметры, критический путь и его продолжительность.
+
+\end{document}
